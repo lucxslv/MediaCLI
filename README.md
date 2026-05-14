@@ -1,4 +1,3 @@
-````md
 <div align="center">
 
 # MediaCLI
@@ -56,7 +55,8 @@ mediacli yt <url> -m video
 
 # transcrever conteúdo
 mediacli yt <url> -m transcrever
-````
+
+```
 
 ---
 
@@ -74,18 +74,21 @@ mediacli yt <url> -m transcrever
 
 ```bash
 winget install ffmpeg
+
 ```
 
 ### macOS
 
 ```bash
 brew install ffmpeg
+
 ```
 
 ### Linux (Debian/Ubuntu)
 
 ```bash
 sudo apt install ffmpeg
+
 ```
 
 ---
@@ -95,14 +98,16 @@ sudo apt install ffmpeg
 Clone o repositório:
 
 ```bash
-git clone https://github.com/lucxslv/mediacli
+git clone [https://github.com/lucxslv/mediacli](https://github.com/lucxslv/mediacli)
 cd mediacli
+
 ```
 
 Instale as dependências:
 
 ```bash
 uv sync
+
 ```
 
 ---
@@ -116,6 +121,7 @@ mediacli/
 ├── downloads/        # Arquivos baixados
 ├── pyproject.toml    # Dependências/configuração
 └── README.md
+
 ```
 
 ---
@@ -126,17 +132,18 @@ mediacli/
 
 ```bash
 uv run mediacli.py yt <url> [opções]
+
 ```
 
 ### Opções
 
-| Flag                | Valores                                | Padrão        | Descrição          |
-| ------------------- | -------------------------------------- | ------------- | ------------------ |
-| `-m`, `--modo`      | `audio` `video` `transcrever` `tudo`   | `transcrever` | Define a operação  |
-| `--modelo`          | `tiny` `base` `small` `medium` `large` | `base`        | Modelo Whisper     |
-| `-l`, `--idioma`    | `pt` `en` `es` ...                     | `auto`        | Idioma do áudio    |
-| `-q`, `--qualidade` | `melhor` `1080p` `720p` `480p`         | `melhor`      | Qualidade do vídeo |
-| `-o`, `--pasta`     | caminho                                | `./downloads` | Pasta de saída     |
+| Flag | Valores | Padrão | Descrição |
+| --- | --- | --- | --- |
+| `-m`, `--modo` | `audio` `video` `transcrever` `tudo` | `transcrever` | Define a operação |
+| `--modelo` | `tiny` `base` `small` `medium` `large` | `base` | Modelo Whisper |
+| `-l`, `--idioma` | `pt` `en` `es` ... | `auto` | Idioma do áudio |
+| `-q`, `--qualidade` | `melhor` `1080p` `720p` `480p` | `melhor` | Qualidade do vídeo |
+| `-o`, `--pasta` | caminho | `./downloads` | Pasta de saída |
 
 ---
 
@@ -145,31 +152,36 @@ uv run mediacli.py yt <url> [opções]
 ### 🎵 Baixar apenas áudio
 
 ```bash
-uv run mediacli.py yt https://youtube.com/watch?v=XXX -m audio
+uv run mediacli.py yt [https://youtube.com/watch?v=XXX](https://youtube.com/watch?v=XXX) -m audio
+
 ```
 
 ### 🎥 Baixar vídeo em 1080p
 
 ```bash
-uv run mediacli.py yt https://youtube.com/watch?v=XXX -m video -q 1080p
+uv run mediacli.py yt [https://youtube.com/watch?v=XXX](https://youtube.com/watch?v=XXX) -m video -q 1080p
+
 ```
 
 ### 🧠 Transcrever vídeo do YouTube
 
 ```bash
-uv run mediacli.py yt https://youtube.com/watch?v=XXX -m transcrever -l pt
+uv run mediacli.py yt [https://youtube.com/watch?v=XXX](https://youtube.com/watch?v=XXX) -m transcrever -l pt
+
 ```
 
 ### 📂 Transcrever arquivo local
 
 ```bash
-uv run mediacli.py yt ./audio.mp3 -m transcrever --modelo medium
+uv run mediacli.py transcrever ./audio.mp3 --modelo medium
+
 ```
 
 ### 🔥 Baixar + transcrever automaticamente
 
 ```bash
-uv run mediacli.py yt https://youtube.com/watch?v=XXX -m tudo
+uv run mediacli.py yt [https://youtube.com/watch?v=XXX](https://youtube.com/watch?v=XXX) -m tudo
+
 ```
 
 ---
@@ -178,16 +190,19 @@ uv run mediacli.py yt https://youtube.com/watch?v=XXX -m tudo
 
 ```bash
 uv run mediacli.py transcrever <arquivo> [opções]
+
 ```
 
 ## Exemplos
 
 ```bash
 uv run mediacli.py transcrever audio.mp3
+
 ```
 
 ```bash
 uv run mediacli.py transcrever gravacao.wav --modelo large -l pt
+
 ```
 
 ---
@@ -198,6 +213,7 @@ Execute:
 
 ```bash
 uv run mediagui.py
+
 ```
 
 A GUI oferece as mesmas funcionalidades da CLI em uma interface simples e intuitiva.
@@ -214,13 +230,13 @@ A GUI oferece as mesmas funcionalidades da CLI em uma interface simples e intuit
 
 # 🧠 Modelos Whisper
 
-| Modelo   | Velocidade | Precisão | RAM Aproximada |
-| -------- | ---------- | -------- | -------------- |
-| `tiny`   | ⚡⚡⚡⚡       | ★☆☆☆☆    | ~1 GB          |
-| `base`   | ⚡⚡⚡        | ★★☆☆☆    | ~1 GB          |
-| `small`  | ⚡⚡         | ★★★☆☆    | ~2 GB          |
-| `medium` | ⚡          | ★★★★☆    | ~5 GB          |
-| `large`  | 🐢         | ★★★★★    | ~10 GB         |
+| Modelo | Velocidade | Precisão | RAM Aproximada |
+| --- | --- | --- | --- |
+| `tiny` | ⚡⚡⚡⚡ | ★☆☆☆☆ | ~1 GB |
+| `base` | ⚡⚡⚡ | ★★☆☆☆ | ~1 GB |
+| `small` | ⚡⚡ | ★★★☆☆ | ~2 GB |
+| `medium` | ⚡ | ★★★★☆ | ~5 GB |
+| `large` | 🐢 | ★★★★★ | ~10 GB |
 
 > Para português, `base` e `small` costumam oferecer o melhor equilíbrio entre velocidade e precisão.
 
@@ -228,23 +244,22 @@ A GUI oferece as mesmas funcionalidades da CLI em uma interface simples e intuit
 
 # 📚 Dependências Principais
 
-| Pacote           | Versão         |
-| ---------------- | -------------- |
-| `openai-whisper` | `>= 20250625`  |
-| `yt-dlp`         | `>= 2026.3.17` |
+| Pacote | Versão |
+| --- | --- |
+| `openai-whisper` | `>= 20250625` |
+| `yt-dlp` | `>= 2026.3.17` |
 
 ---
 
 # 🔮 Roadmap
 
-* [ ] Suporte nativo ao SoundCloud
-* [ ] Suporte ao TikTok
-* [ ] Download de playlists
-* [ ] Legendas automáticas `.srt`
-* [ ] Exportação `.txt` / `.json`
-* [ ] Interface Web
-* [ ] Paralelismo de downloads
-* [ ] Empacotamento binário standalone
+* [ ] Aprimorar integração nativa com SoundCloud e TikTok
+* [ ] Download de playlists completas
+* [ ] Geração de legendas automáticas em formato `.srt`
+* [ ] Exportação de transcrições em `.txt` / `.json`
+* [ ] Interface Web (Streamlit/Gradio)
+* [ ] Paralelismo no download de múltiplos arquivos
+* [ ] Empacotamento binário standalone (executável único)
 
 ---
 
@@ -264,6 +279,7 @@ git commit -m "feat: adiciona nova feature"
 
 # push
 git push origin feature/minha-feature
+
 ```
 
 ---
@@ -273,12 +289,3 @@ git push origin feature/minha-feature
 Distribuído sob licença MIT.
 
 Veja `LICENSE` para mais informações.
-
----
-
-<div align="center">
-
-### MediaCLI — simples por fora, brutal por dentro.
-
-</div>
-```
